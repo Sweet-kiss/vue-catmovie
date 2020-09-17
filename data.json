@@ -1,0 +1,246 @@
+{
+	"errno": 0,
+	"data":{
+	"goodMovie":[
+			{
+				"id": "1",
+				"imgsrc":"movie01",
+				"movieName": "八佰"
+		  },
+		  {
+		  	"id": "2",
+				"imgsrc":"movie02",
+				"movieName": "1/2的魔法"	  	
+		  },
+		  {
+		  	"id": "3",
+				"imgsrc":"movie03",
+				"movieName": "信条"	  	
+		  },
+		  {
+		  	"id": "4",
+				"imgsrc":"movie04",
+				"movieName": "未知嫌疑人"	  	
+		  },
+		  {
+		  	"id": "5",
+				"imgsrc":"movie05",
+				"movieName": "假面饭店"	  	
+		  },
+		  {
+		  	"id": "6",
+				"imgsrc":"movie06",
+				"movieName": "花木兰"	  	
+		  },
+		  {
+		  	"id": "7",
+				"imgsrc":"movie07",
+				"movieName": "我的女友是机器人"	  	
+		  },
+		  {
+		  	"id": "8",
+				"imgsrc":"movie08",
+				"movieName": "死无对证"	  	
+		  },
+		  {
+		  	"id": "9",
+				"imgsrc":"movie09",
+				"movieName": "麦路人"	  	
+		  },
+		  {
+		  	"id": "10",
+				"imgsrc":"movie10",
+				"movieName": "新愚公移山"	  	
+		  }
+	  ],
+	  "wellReceived":[
+	  	{
+         "id": "001",
+         "movie_name":"花木兰",
+         "imgsrc":"movie06",
+         "score": "7.6",
+         "toStar":"主演: 刘亦菲,甄子丹,杰森·斯考特·李",
+         "Number_of_cinemas": "315",
+         "Field_number": "3018"
+	  	},
+	  	{
+         "id": "002",
+         "movie_name":"信条",
+         "imgsrc":"movie03",
+         "score": "8.3",
+         "toStar":"主演: 约翰·大卫·华盛顿,罗伯特·帕丁森,伊丽莎白·德比茨基",
+         "Number_of_cinemas": "307",
+         "Field_number": "2259"
+	  	},
+	  	{
+         "id": "003",
+         "movie_name":"八佰",
+         "imgsrc":"movie01",
+         "score": "9.2",
+         "toStar":"主演: 王千源,张译,姜武",
+         "Number_of_cinemas": "313",
+         "Field_number": "1965"
+	  	},
+	  	{
+         "id": "004",
+         "movie_name":"我的女友是机器人",
+         "imgsrc":"movie07",
+         "score": "7.1",
+         "toStar":"主演: 辛芷蕾,包贝尔,魏翔",
+         "Number_of_cinemas": "201",
+         "Field_number": "416"
+	  	},
+	  	{
+         "id": "005",
+         "movie_name":"假面饭店",
+         "imgsrc":"movie05",
+         "score": "7.9",
+         "toStar":"主演: 木村拓哉,长泽雅美,小日向文世",
+         "Number_of_cinemas": "131",
+         "Field_number": "261"
+	  	},
+      {
+         "id": "001",
+         "movie_name":"花木兰",
+         "imgsrc":"movie06",
+         "score": "7.6",
+         "toStar":"主演: 刘亦菲,甄子丹,杰森·斯考特·李",
+         "Number_of_cinemas": "315",
+         "Field_number": "3018"
+      },
+      {
+         "id": "002",
+         "movie_name":"信条",
+         "imgsrc":"movie03",
+         "score": "8.3",
+         "toStar":"主演: 约翰·大卫·华盛顿,罗伯特·帕丁森,伊丽莎白·德比茨基",
+         "Number_of_cinemas": "307",
+         "Field_number": "2259"
+      },
+      {
+         "id": "003",
+         "movie_name":"八佰",
+         "imgsrc":"movie01",
+         "score": "9.2",
+         "toStar":"主演: 王千源,张译,姜武",
+         "Number_of_cinemas": "313",
+         "Field_number": "1965"
+      },
+      {
+         "id": "004",
+         "movie_name":"我的女友是机器人",
+         "imgsrc":"movie07",
+         "score": "7.1",
+         "toStar":"主演: 辛芷蕾,包贝尔,魏翔",
+         "Number_of_cinemas": "201",
+         "Field_number": "416"
+      },
+      {
+         "id": "005",
+         "movie_name":"假面饭店",
+         "imgsrc":"movie05",
+         "score": "7.9",
+         "toStar":"主演: 木村拓哉,长泽雅美,小日向文世",
+         "Number_of_cinemas": "131",
+         "Field_number": "261"
+      },
+      {
+         "id": "001",
+         "movie_name":"花木兰",
+         "imgsrc":"movie06",
+         "score": "7.6",
+         "toStar":"主演: 刘亦菲,甄子丹,杰森·斯考特·李",
+         "Number_of_cinemas": "315",
+         "Field_number": "3018"
+      },
+      {
+         "id": "002",
+         "movie_name":"信条",
+         "imgsrc":"movie03",
+         "score": "8.3",
+         "toStar":"主演: 约翰·大卫·华盛顿,罗伯特·帕丁森,伊丽莎白·德比茨基",
+         "Number_of_cinemas": "307",
+         "Field_number": "2259"
+      },
+      {
+         "id": "003",
+         "movie_name":"八佰",
+         "imgsrc":"movie01",
+         "score": "9.2",
+         "toStar":"主演: 王千源,张译,姜武",
+         "Number_of_cinemas": "313",
+         "Field_number": "1965"
+      },
+      {
+         "id": "004",
+         "movie_name":"我的女友是机器人",
+         "imgsrc":"movie07",
+         "score": "7.1",
+         "toStar":"主演: 辛芷蕾,包贝尔,魏翔",
+         "Number_of_cinemas": "201",
+         "Field_number": "416"
+      },
+      {
+         "id": "005",
+         "movie_name":"假面饭店",
+         "imgsrc":"movie05",
+         "score": "7.9",
+         "toStar":"主演: 木村拓哉,长泽雅美,小日向文世",
+         "Number_of_cinemas": "131",
+         "Field_number": "261"
+      }            	  		  	
+	  ],
+     "movieDetail":[
+        {
+          "id": "001",
+          "movie_name":"花木兰",
+          "imgsrc":"movie06",
+          "theme":"剧情/冒险",
+          "toStar":"刘亦菲,甄子丹,杰森·斯考特·李",
+          "ReleaseTime":"2020-09-11中国大陆上映",
+          "Duration":"115分钟",
+          "briefIntroduction":"中国的皇帝颁布法令，要求每家出一名男子服兵役，抵御北方侵略者。作为一名受人尊敬的战士的长女，花木兰（刘亦菲 饰）站出来替生病的父亲应征入伍。她装扮成男人，化名花军，经受了种种考验，同时必须利用内在的力量，接纳自己真正的潜能。这是一场史诗般的旅程，让木兰蜕变为一名受人尊敬的战士，也赢得来自国家与骄傲的父亲的尊重。"          
+        },
+        {
+          "id":"002",
+          "movie_name":"信条",
+          "imgsrc":"movie03",
+          "theme":"科幻/动作/剧情",
+          "toStar":"约翰·大卫·华盛顿,罗伯特·帕丁森,伊丽莎白·德比茨基",
+          "ReleaseTime":"2020-09-04中国大陆上映",
+          "Duration":"151分钟",
+          "briefIntroduction":"世界存亡危在旦夕，“信条”一词是惟一的线索与武器。主人公穿梭于全球各地，开展特工活动，力求揭示“信条”之谜，并完成一项超越了真实时间的神秘任务。这项任务并非时间之旅，而是【时空逆转】。"
+        },
+        {
+          "id":"003",
+          "movie_name":"八佰",
+          "imgsrc":"movie01",
+          "theme":"剧情/战争/历史",
+          "toStar":"王千源,张译,姜武",
+          "ReleaseTime":"2020-08-21中国大陆上映",
+          "Duration":"147分钟",
+          "briefIntroduction":"淞沪会战后期，中国军队第88师524团团附谢晋元临危受命，率领400余名官兵（外界称“八百壮士”），坚守闸北四行仓库，掩护主力部队撤退。“八百壮士”抱定为国捐躯的决心，以弹丸之地抗击侵略者，激战四昼夜，打退敌人十余次疯狂进攻。其战斗事迹之英勇，爱国气节之豪壮，振奋国人，震惊世界。"
+        },
+        {
+          "id": "004",
+          "movie_name":"我的女友是机器人",
+          "imgsrc":"movie07",
+          "theme":"爱情/喜剧",
+          "toStar":"辛芷蕾,包贝尔,魏翔",
+          "ReleaseTime":"2020-09-11中国大陆上映",
+          "Duration":"111分钟",
+          "briefIntroduction":"生活毫无激情的导游方元（包贝尔 饰）在未收到任何祝福的生日当天，邂逅了陌生的潇洒女孩（辛芷蕾 饰），两人机缘巧合度过了开心的庆生夜……一年后的生日当天，方元再次遇到了和当初“潇洒女孩”长相一模一样的机器人初一（辛芷蕾 饰），两人亦开始了朝夕相处且啼笑皆非的生活，初一也逐渐融入了和巴哥（魏翔 饰）等一群朋友的生活。方元对初一逐渐暗生情愫，而初一似乎还没有理解方元的心意……"
+        },
+        {
+          "id": "005",
+          "movie_name":"假面饭店",
+          "imgsrc":"movie05",
+          "theme":"剧情/悬疑",
+          "toStar":"木村拓哉,长泽雅美,小日向文世",
+          "ReleaseTime":"2020-09-04中国大陆上映",
+          "Duration":"133分钟",
+          "briefIntroduction":"东京发生三起连环杀人案。侦探刑警在考察案情后判断下一次案件将发生在Koruteshia酒店。他扮成服务人员潜入酒店，与酒店前台小姐一起追查凶手。本片由木村拓哉以及长泽雅美领衔主演。"
+        }
+     ]		
+	} 
+}
