@@ -5,6 +5,8 @@ import '@/assets/reset.css'
 import WellReceived from '@/components/wellReceived/wellReceived'
 import Cinema from '@/components/cinema/cinema'
 import ClassicMovies from '@/components/classicMovies/classicMovies'
+import MovieDetail  from '@/components/baseAssembly/movieDetail/movieDetail'
+import SetSelect from '@/components/baseAssembly/setSelect/setSelect'
 import axios from 'axios'
 
 Vue.prototype.$axios = axios;
@@ -32,6 +34,16 @@ export default new Router({
         	component: ClassicMovies
         }
       ]
+    },
+    {
+      path: '/movieDetail',
+      name: 'movieDetail',
+      component: MovieDetail      
+    },
+    {
+      path: '/setSelect',
+      name: 'setSelect',
+      component: SetSelect      
     }
   ]
 })

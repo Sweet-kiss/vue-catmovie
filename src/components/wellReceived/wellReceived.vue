@@ -5,7 +5,7 @@
        <good-movie :movieList="movieList"></good-movie>
        <div class="wellReceived_wrap" ref="wellReceived_wrap">
          <ul>
-           <li class="movie_lists" v-for="(item, index) in getList">
+           <li class="movie_lists" v-for="(item, index) in getList" :key="item.id" @click="gotoMovieDetail(item.id)">
             <div class="movieImg"><img :src="require('static/movieimg/'+item.imgsrc+'.png')" alt="图片"></div>
             <div class="movie_text">
               <p class="movie_title">{{item.movie_name}}<span><img src="" alt=""></span></p>
@@ -13,7 +13,7 @@
               <p class="toStar">{{item.toStar}}</p>
               <p class="Screening">今天<span>{{item.Number_of_cinemas}}</span>家影院放映<span>{{item.Field_number}}</span>场</p>
             </div>
-            <div class="BuyTickets">购票</div>            
+            <div class="BuyTickets" @click.stop="BuyTickets(item.id)">购票</div>            
            </li>
            <div v-if="loadText" class="loadText" @click="getPullListData">{{loadText}}</div>
          </ul>
@@ -70,6 +70,12 @@ export default {
 
   },
   methods: {
+    BuyTickets(id) {
+       this.$router.push({path:'/setSelect',query: { id: id }})
+    },
+    gotoMovieDetail(id) {
+       this.$router.push({path:'/movieDetail',query: { id: id }})
+    },
     getMovieList() {
       let _this = this
       this.$axios.get("/api/goodmovie").then(function(res){       
