@@ -1,124 +1,194 @@
 <template>
-  <div class="about">
-    <div class="wrapper" ref="wrapper">
-      <ul class="uls">
-        <li class="lis" v-for="(item,index) in getList" :key="index+'key'">{{item.name}}</li>
-        <div
-          v-if="loadText"
-          style="color:#ccc;"
-          class="loadText"
-          @click="getPullListData"
-        >{{loadText}}</div>
-      </ul>
+  <div class="cinema">
+    <div class="Screening_criteria">
+      <div class="address"><p>全城 <span class="icon"></span></p></div>
+      <div class="brand" @click="showAllbrand($event)"><p>品牌 <span class="icon"></span></p></div>
+
+      <div class="characteristic"><p>特色 <span class="icon"></span></p></div>
     </div>
-    <div class="loading" v-show="show">{{loadingText}}</div>
+    <div class="All_brand" v-if="isShow">
+        <ul>
+          <li>全部</li>
+          <li>SFC上影影城</li>
+          <li>万达影城</li>
+          <li>大地影院</li>
+          <li>百丽宫影城</li>
+          <li>大光明电影院</li>
+          <li>橙天嘉禾影城</li>
+        </ul>
+      </div>
+      <div class="zhezhao" v-if="isShow"></div>
+    <div class="cinemaLists_wrap">
+      <div class="cinemaLists" v-for="item in NewCinemalists">
+        <div class="cinemaName"><span>{{item.name}}</span><span class="price_all">{{item.price}}<span>元起</span> </span></div>
+        <div class="cinema_address"><span>{{item.address}}</span><span>{{item.distance}}</span></div>
+        <div class="discount_wrap">
+          <span  v-for="item1 in item.discount" 
+          :class="[item1==='小吃'||item1==='折扣卡'?'discount':'label']">{{item1}}</span>
+        </div>
+        <div class="information"><span class="card">卡</span>{{item.imformation}}</div>        
+      </div>
+    </div>
+
   </div>
 </template>
 <script>
-const list1 = [{ name: '列表数据1' }, { name: '列表数据2' }, { name: '列表数据3' }, { name: '列表数据4' }, { name: '列表数据5' }, { name: '列表数据6' }, { name: '列表数据7' }, { name: '列表数据8' }, { name: '列表数据9' }, { name: '列表数据10' }, { name: '列表数据11' }, { name: '列表数据12' }, { name: '列表数据13' }, { name: '列表数据14' }, { name: '列表数据15' }, { name: '列表数据12' }, { name: '列表数据12' }, { name: '列表数据12' }, { name: '列表数据12' }, { name: '列表数据12' }, { name: '列表数据16' }, { name: '列表数据17' }, { name: '列表数据18' }, { name: '列表数据19' }, { name: '列表数据20' }, { name: '列表数据21' }, { name: '列表数据22' }, { name: '列表数据23' }];
-
-const list2 = [{ name: '下拉加载数据1' }, { name: '下拉加载数据2' }, { name: '下拉加载数据3' }, { name: '下拉加载数据4' }, { name: '下拉加载数据5' }]
-
-let timer = null;
-let timer2 = null;
-
-import BScroll from 'better-scroll'
 export default {
   data () {
     return {
-      loadText: '上拉加载更多',
-      getList: [],
-      pagenum: 1,
-      pagesize: 5,
-      total: 0,
-      scroll: 0,
-      show: false,
-      loadingText: '加载中...'
+      Cinemalists: [],
+      isShow: false
     }
   },
   created () {
-    this.getList = list1;
-  },
-  mounted () {
-    this.scroll = new BScroll('.wrapper', {
-      scrollY: true,
-      click: true,
-      probeType: 1
-    });
-    // 监听滚动事件
-    this.scroll.on('touchEnd', (position) => {
-      if (position.y < this.scroll.maxScrollY - 30) {
-        this.getPullListData()
-      }
-      if (position.y > 80) {
-        this.getDownListData();
-      }
-    });
+    this.getCinemalists()
+
   },
   methods: {
-    getPullListData () {
-      this.$nextTick(() => {
-        if (this.loadText === '上拉加载更多') {
-          this.show = true;
-          timer = setTimeout(() => {
-            this.getList = [...this.getList, ...list2];
-            this.show = false;
-          }, 1000)
-          this.loadText = '上拉加载更多'
-        }
+    getCinemalists () {
+      let _this = this
+       this.$axios.get("/api/goodmovie").then(function(res){       
+        _this.Cinemalists = res.data.data.data.cinemaLists
+        console.log(_this.Cinemalists)
+
       })
     },
-    getDownListData () {
-      this.$nextTick(() => {
-        this.show = true;
-        this.loadingText = '刷新中...'
-        timer2 = setTimeout(() => {
-          this.getList = [...list1];
-          this.show = false;
-        }, 1000)
-      })
-    }
+   sortKey(array, key) {
+    return array.sort((a,b)=>{
+     let re = /\d+/g
+     var val1 = parseFloat(a[key])
+     var val2 = parseFloat(b[key])
+     return val1 - val2;
+    })
+   },
+   showAllbrand(ev) {
+     this.isShow = !this.isShow
+ 　　if (!this.$refs.msk.contains(ev.target)) {
+　　　　　this.isShow = false;
+　　　}
+   }
   },
-  destroyed () {
-    clearTimeout(timer2);
-    clearTimeout(timer);
+  computed: {
+    NewCinemalists () {
+       return this.sortKey(this.Cinemalists,"distance")
+    }
   }
 }
 </script>
 <style>
-.wrapper {
-  width: 100vw;
-  height: 100vh;
-  margin: 0 auto;
-  font-size: 100px;
+.cinema {
+  clear: both;
+}
+.Screening_criteria {
+  display: flex;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: #ccc solid 1px;
+}
+.address,.brand,.characteristic {
+  width: 33.3%;
   text-align: center;
+  font-size: 12px;
 }
+.address,.brand {
+  border-right:#ccc solid 1px; 
+}
+.icon {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background:url("./img/arr_b.png");
+  background-size: cover;
+}
+.cinemaLists {
+  padding: 10px 20px;
+  border-bottom: #efeeed solid 1px;
+}
+.cinemaName {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.price_all {
+  font-size: 20px;
+  color: red;
+}
+.price_all span {
+  font-size: 14px;
+}
+.cinema_address span:first-child{
+  display: inline-block;
+  font-size: 13px;
+  color: #7b7b7b;
+  width: 250px;
+  margin-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 
-.uls {
-  width: 100%;
 }
-.uls .lis {
-  width: 100%;
-  margin-top: 150px;
-  margin-bottom: 150px;
+.cinema_address span:last-child {
+   font-size: 14px;
+   color: #7b7b7b;
 }
-.loadText {
-  padding-bottom: 150px;
+.discount_wrap {
+  padding: 5px 0;
 }
-
-.loading {
-  width: 500px;
-  height: 300px;
-  line-height: 300px;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  margin: 0 auto;
+.discount {
+  display: inline-block;
+  font-size: 10px;
+  padding: 1px 2px;
+  color: #fabd6d;
+  border: #fabd6d solid 1px;
+  border-radius: 3px;
+  margin-right: 6px;
+}
+.label {
+  font-size: 10px;
+  padding: 1px 2px;
+  color: #91b6ce;
+  border: #91b6ce solid 1px;
+  border-radius: 3px;
+  margin-right: 6px;  
+}
+.information {
+  font-size: 12px;
+  color: #949596;
+}
+.card {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
   text-align: center;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 100px;
-  border-radius: 30px;
+  line-height: 15px;
+  background-color: #48aceb;
+  color: #fff;
+  border-radius: 2px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+.Screening_criteria {
+  position: relative;
+}
+.All_brand {
+  width: 100%;
+  background-color: #fff;
+  z-index: 3;
+  position: absolute;
+  top:193px;
+  left: 0;
+}
+.All_brand ul li {
+  height: 40px;
+  line-height: 40px;
+  text-indent: 40px;
+  border-bottom: #ccc solid 1px;
+}
+.zhezhao {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  background-color: rgb(0,0,0,.5);
 }
 </style>

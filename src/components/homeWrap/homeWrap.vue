@@ -12,7 +12,7 @@
   	</div>
   	<div id="navigation_wrap" :class="searchBarFixed == true ? 'navigation_fixed' :''">
   	  <div class="navigation" ref="navigation">
-	  		<span class="address">上海</span>
+	  		<span class="address_all">上海</span>
 	  		<div class="tab_list">
 		  		<router-link class="tab_item" ref="tab01" to="/wellReceived">
 		  		 热映
@@ -115,7 +115,7 @@ export default {
 		top: 40px;
 		z-index: 100;
 	}
-	.address {
+	.address_all {
 		width: 80px;
 		text-indent: 10px;
 	}
