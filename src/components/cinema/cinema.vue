@@ -8,16 +8,12 @@
     </div>
     <div class="All_brand" v-if="isShow">
         <ul>
-          <li>全部</li>
-          <li>SFC上影影城</li>
-          <li>万达影城</li>
-          <li>大地影院</li>
-          <li>百丽宫影城</li>
-          <li>大光明电影院</li>
-          <li>橙天嘉禾影城</li>
+          <li v-for="(brand,index) in brands" :key="index" :class="active==index?'activeClass':''" @click="changeBrand(index)">
+            <span class="tick" v-show="active==index"></span>
+          {{brand}}</li>
         </ul>
       </div>
-      <div class="zhezhao" v-if="isShow"></div>
+      <!-- <div class="zhezhao" v-if="isShow"></div> -->
     <div class="cinemaLists_wrap">
       <div class="cinemaLists" v-for="item in NewCinemalists">
         <div class="cinemaName"><span>{{item.name}}</span><span class="price_all">{{item.price}}<span>元起</span> </span></div>
@@ -37,7 +33,9 @@ export default {
   data () {
     return {
       Cinemalists: [],
-      isShow: false
+      isShow: false,
+      brands:["全部","SFC上影影城","万达影城","大地影院","百丽宫影城","大光明电影院","橙天嘉禾影城"],
+      active: 0
     }
   },
   created () {
@@ -45,6 +43,10 @@ export default {
 
   },
   methods: {
+    changeBrand (index) {
+      this.active = index
+      this.isShow = !this.isShow
+    },
     getCinemalists () {
       let _this = this
        this.$axios.get("/api/goodmovie").then(function(res){       
@@ -63,9 +65,9 @@ export default {
    },
    showAllbrand(ev) {
      this.isShow = !this.isShow
- 　　if (!this.$refs.msk.contains(ev.target)) {
-　　　　　this.isShow = false;
-　　　}
+//  　　if (!this.$refs.msk.contains(ev.target)) {
+// 　　　　　this.isShow = false;
+// 　　　}
    }
   },
   computed: {
@@ -190,5 +192,16 @@ export default {
   top:0;
   left: 0;
   background-color: rgb(0,0,0,.5);
+}
+.activeClass {
+  color: red
+}
+.tick {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("./img/tick.png");
+  background-size: cover;
+  margin-right: 20px;
 }
 </style>
