@@ -1,21 +1,28 @@
-# movie
+# 项目介绍
 
-> A Vue.js project
+> 这是一个基于vue全家桶制作的仿猫眼电影移动端单页面webapp，利用假数据，实现了热门电影列表，影院筛选，电影详情，购买选票功能
 
-## Build Setup
+# 技术栈
+>vue + vue-router + axios
 
-``` bash
-# install dependencies
+# 项目截图
+
+![图片名称](https://www.baidu.com/img/bd_logo1.png)
+
+![图片名称](https://www.baidu.com/img/bd_logo1.png)
+
+![图片名称](https://www.baidu.com/img/bd_logo1.png)
+
+# 运行项目
+
+# 克隆整个项目到本地
+git clone https://github.com/zhixuanziben/gouyan-movie-vue.git
+
+# 切换到项目所在文件夹
+cd gouyan-movie-vue
+
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
+# 打开浏览器，输入localhost:8080即可访问
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
