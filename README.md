@@ -20,10 +20,10 @@
 # 运行项目
 
 # 克隆整个项目到本地
-git clone https://github.com/zhixuanziben/gouyan-movie-vue.git
+git clone https://git@github.com:Sweet-kiss/vue-catmovie.git
 
 # 切换到项目所在文件夹
-cd gouyan-movie-vue
+cd 
 
 # 安装依赖
 npm install
