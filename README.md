@@ -19,14 +19,14 @@
 
 # 运行项目
 
-# 克隆整个项目到本地
+## 克隆整个项目到本地
 git clone https://git@github.com:Sweet-kiss/vue-catmovie.git
 
-# 切换到项目所在文件夹
-cd 
+## 切换到项目所在文件夹
+cd catMovie
 
-# 安装依赖
+## 安装依赖
 npm install
 
-# 打开浏览器，输入localhost:8080即可访问
+## 打开浏览器，输入localhost:8080即可访问
 npm run dev
