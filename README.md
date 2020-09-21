@@ -3,7 +3,11 @@
 > 这是一个基于vue全家桶制作的仿猫眼电影移动端单页面webapp，利用假数据，实现了热门电影列表，影院筛选，电影详情，购买选票功能
 
 # 技术栈
->vue + vue-router + axios
+### vue2.0 + vue-router + vuex：vue全家桶
+### axios：用于ajax请求
+### better-scroll：移动端滚动库，优化移动端滚动效果
+### webpack： 构建工具
+### es6: 使用es6语法
 
 # 项目截图
 
